@@ -4,3 +4,5 @@
 	branch = false
 [pull]
 	ff = only
+[feature]
+	manyfiles=true
