@@ -7,6 +7,7 @@ cp -fr .gitconfig $HOME/.gitconfig
 cp -fr .install-vs-code-extensions.sh $HOME/.install-vs-code-extensions.sh
 cp -fr .tmux.conf $HOME/.tmux.conf
 cp -fr .vimrc $HOME/.vimrc
+cp -fr .zsh_history $HOME/.zsh_history
 cp -fr .zshrc $HOME/.zshrc
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Done installing dotfiles" >> $HOME/.dotfile-install-log
