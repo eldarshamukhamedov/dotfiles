@@ -1,0 +1,6 @@
+[core]
+	editor = vim
+[pager]
+	branch = false
+[pull]
+	ff = only
