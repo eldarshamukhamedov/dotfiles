@@ -1,10 +1,15 @@
 # ZSH configs
 export ZSH=$HOME/.oh-my-zsh
-FORCE_COLOR=1
-ZSH_DISABLE_COMPFIX=true
-ZSH_THEME="aperture"
+export FORCE_COLOR=1
+export ZSH_DISABLE_COMPFIX=true
+export ZSH_THEME="aperture"
+eval $(dircolors $HOME/.dircolors)
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
+
+# Node/NPM/PNPM configs
+export PNPM_BIN_DEST=$HOME/.pnpm-cache/bin
+export PNPM_DEST=$HOME/.pnpm-cache
 
 # Aliases
 alias ll="LC_COLLATE=C ls -lha --group-directories-first --color=auto"
