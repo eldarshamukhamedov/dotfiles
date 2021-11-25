@@ -11,6 +11,9 @@ source $ZSH/oh-my-zsh.sh
 export PNPM_BIN_DEST=$HOME/.pnpm-cache/bin
 export PNPM_DEST=$HOME/.pnpm-cache
 
+# Install VS Code extensions
+source $HOME/.install-vs-code-extensions.sh
+
 # Aliases
 alias ll="LC_COLLATE=C ls -lha --group-directories-first --color=auto"
 alias gs="git status"
