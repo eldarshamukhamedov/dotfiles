@@ -13,6 +13,10 @@ cp -fr .zshrc $HOME/.zshrc
 
 # Install OS dependencies
 sudo apt-get -y install --no-install-recommends tmux wget
+
+# Install Node dependencies
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+nvm install 16
 npm install -g @microsoft/rush@5.42.4 prettier@^2.2.1 pnpm@5.15.2 git-checkout-interactive
 
 # Set timezone
