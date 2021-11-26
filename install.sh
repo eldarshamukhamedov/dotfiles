@@ -13,7 +13,7 @@ cp -fr .zshrc $HOME/.zshrc
 
 # Install OS dependencies
 sudo apt-get -y install --no-install-recommends tmux wget
-npm install -g git-checkout-interactive
+npm install -g @microsoft/rush@5.42.4 prettier@^2.2.1 pnpm@5.15.2 git-checkout-interactive
 
 # Set timezone
 sudo ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
