@@ -15,7 +15,8 @@ cp -fr .zshrc $HOME/.zshrc
 sudo apt-get -y install --no-install-recommends tmux wget
 npm install -g git-checkout-interactive
 
-# Configure Git
-git config feature.manyFiles true
+# Set timezone
+sudo ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+echo 'America/New_York' | sudo tee /etc/timezone
 
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Done installing dotfiles" >> $HOME/.dotfile-install-log
