@@ -6,6 +6,7 @@ cp -fr .bashrc $HOME/.bashrc
 cp -fr .dircolors $HOME/.dircolors
 cp -fr .gitconfig $HOME/.gitconfig
 cp -fr .install-vs-code-extensions.sh $HOME/.install-vs-code-extensions.sh
+cp -fr .npmrc $HOME/.npmrc
 cp -fr .tmux.conf $HOME/.tmux.conf
 cp -fr .vimrc $HOME/.vimrc
 cp -fr .zsh_history $HOME/.zsh_history
@@ -15,9 +16,11 @@ cp -fr .zshrc $HOME/.zshrc
 sudo apt-get -y install --no-install-recommends tmux wget
 
 # Install Node dependencies
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-nvm install 16
-npm install -g @microsoft/rush@5.42.4 prettier@^2.2.1 pnpm@5.15.2 git-checkout-interactive
+npm install -g n
+PATH="$PATH"
+sudo n lts
+sudo chown -R $(whoami) /usr/local/n /usr/local/lib/node_modules /usr/local/bin /usr/local/include /usr/local/share
+npm install -g @microsoft/rush@5.56.0 prettier@2 pnpm@6 git-checkout-interactive
 
 # Set timezone
 sudo ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime

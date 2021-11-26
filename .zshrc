@@ -1,3 +1,4 @@
+clear
 # ZSH configs
 export ZSH=$HOME/.oh-my-zsh
 export FORCE_COLOR=1
@@ -13,6 +14,7 @@ export PNPM_DEST=$HOME/.pnpm-cache
 
 # Install VS Code extensions
 source $HOME/.install-vs-code-extensions.sh
+clear
 
 # Aliases
 alias ll="LC_COLLATE=C ls -lha --group-directories-first --color=auto"
@@ -21,3 +23,6 @@ alias gb="gci"
 alias ifconfig="ip address show"
 alias tmx="tmux new-session -A -s main"
 alias ap="cd /workspaces/aperture-public"
+
+# Log versions
+echo "$fg_bold[cyan]>>> $fg_bold[green]node $(node -v) npm $(npm -v) pnpm $(pnpm -v)"
