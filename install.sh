@@ -14,6 +14,10 @@ cp -fr .zshrc $HOME/.zshrc
 
 # Install OS dependencies
 sudo apt-get -y install --no-install-recommends tmux wget
+# Supabase
+wget https://github.com/supabase/cli/releases/download/v0.15.9/supabase_0.15.9_linux_amd64.deb
+sudo apt install -y ./supabase_0.15.9_linux_amd64.deb
+rm ./supabase_0.15.9_linux_amd64.deb
 
 # Install Node dependencies
 npm install -g n
