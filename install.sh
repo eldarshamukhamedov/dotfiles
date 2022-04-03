@@ -15,16 +15,16 @@ cp -fr .zshrc $HOME/.zshrc
 # Install OS dependencies
 sudo apt-get -y install --no-install-recommends tmux wget
 # Supabase
-wget https://github.com/supabase/cli/releases/download/v0.15.9/supabase_0.15.9_linux_amd64.deb
-sudo apt install -y ./supabase_0.15.9_linux_amd64.deb
-rm ./supabase_0.15.9_linux_amd64.deb
+wget https://github.com/supabase/cli/releases/download/v0.23.10/supabase_0.23.10_linux_amd64.deb
+sudo apt install -y ./supabase_0.23.10_linux_amd64.deb
+rm ./supabase_0.23.10_linux_amd64.deb
 
 # Install Node dependencies
 npm install -g n
 PATH="$PATH"
 sudo n lts
 sudo chown -R $(whoami) /usr/local/n /usr/local/lib/node_modules /usr/local/bin /usr/local/include /usr/local/share
-npm install -g @microsoft/rush@5.56.0 prettier@2 pnpm@6 git-checkout-interactive
+npm install -g @microsoft/rush@5.64.0 prettier@2.6.2 pnpm@6.32.4 git-checkout-interactive
 
 # Set timezone
 sudo ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
