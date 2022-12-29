@@ -13,6 +13,7 @@ cp -fr .zsh_history $HOME/.zsh_history
 cp -fr .zshrc $HOME/.zshrc
 
 # Install OS dependencies
+sudo apt-get update
 sudo apt-get -y install --no-install-recommends tmux wget
 # Supabase
 wget https://github.com/supabase/cli/releases/download/v1.3.0/supabase_1.3.0_linux_amd64.deb
