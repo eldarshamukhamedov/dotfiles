@@ -31,6 +31,7 @@ rm ./supabase_${SUPABASE_CLI_VERSION}_linux_amd64.deb
 
 # Install Node dependencies
 curl https://get.volta.sh | bash
+PATH=$HOME/.volta/bin:$PATH
 volta install \
   node@$NODE_VERSION \
   npm@$NPM_VERSION \
