@@ -39,8 +39,6 @@ volta install \
   prettier@$PRETTIER_VERSION \
   git-checkout-interactive
 
-npm install -g @microsoft/rush@5.77.1 prettier@2.6.2 pnpm@7.9.5 git-checkout-interactive
-
 # Set timezone
 sudo ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 echo 'America/New_York' | sudo tee /etc/timezone
