@@ -8,6 +8,10 @@ eval $(dircolors $HOME/.dircolors)
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
+# Volta config
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 # Node/NPM/PNPM configs
 export PNPM_BIN_DEST=$HOME/.pnpm-cache/bin
 export PNPM_DEST=$HOME/.pnpm-cache
@@ -27,4 +31,3 @@ alias ap="cd /workspaces/aperture-public"
 # Log versions
 echo "$fg_bold[cyan]>>> $fg_bold[green]node $(node -v) npm $(npm -v) pnpm $(pnpm -v)"
 
-# Volta config

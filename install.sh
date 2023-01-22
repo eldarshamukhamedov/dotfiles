@@ -30,15 +30,14 @@ sudo apt install -y ./supabase_${SUPABASE_CLI_VERSION}_linux_amd64.deb
 rm ./supabase_${SUPABASE_CLI_VERSION}_linux_amd64.deb
 
 # Install Node dependencies
-curl https://get.volta.sh | bash
+curl https://get.volta.sh | bash -s -- --skip-setup
 PATH=$HOME/.volta/bin:$PATH
-volta install \
-  node@$NODE_VERSION \
-  npm@$NPM_VERSION \
-  pnpm@$PNPM_VERSION \
-  @microsoft/rush@$RUSH_VERSION \
-  prettier@$PRETTIER_VERSION \
-  git-checkout-interactive
+volta install node@$NODE_VERSION
+volta install npm@$NPM_VERSION
+volta install pnpm@$PNPM_VERSION
+volta install @microsoft/rush@$RUSH_VERSION
+volta install prettier@$PRETTIER_VERSION
+volta install git-checkout-interactive
 
 # Set timezone
 sudo ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
