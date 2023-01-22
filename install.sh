@@ -1,5 +1,13 @@
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] Installing dotfiles" > $HOME/.dotfile-install-log
 
+# Versions
+NODE_VERSION=18.13.0
+NPM_VERSION=9.3.1
+PNPM_VERSION=7.25.1
+RUSH_VERSION=5.88.2
+PRETTIER_VERSION=2.6.2
+SUPABASE_CLI_VERSION=1.34.5
+
 # Copy dotfiles and dotfile dependencies
 cp -fr aperture.zsh-theme $HOME/.oh-my-zsh/custom/themes/aperture.zsh-theme
 cp -fr .bashrc $HOME/.bashrc
@@ -15,16 +23,22 @@ cp -fr .zshrc $HOME/.zshrc
 # Install OS dependencies
 sudo apt-get update
 sudo apt-get -y install --no-install-recommends tmux wget
+
 # Supabase
-wget https://github.com/supabase/cli/releases/download/v1.3.0/supabase_1.3.0_linux_amd64.deb
-sudo apt install -y ./supabase_1.3.0_linux_amd64.deb
-rm ./supabase_1.3.0_linux_amd64.deb
+wget https://github.com/supabase/cli/releases/download/v${SUPABASE_CLI_VERSION}/supabase_${SUPABASE_CLI_VERSION}_linux_amd64.deb
+sudo apt install -y ./supabase_${SUPABASE_CLI_VERSION}_linux_amd64.deb
+rm ./supabase_${SUPABASE_CLI_VERSION}_linux_amd64.deb
 
 # Install Node dependencies
-npm install -g n
-PATH="$PATH"
-sudo n lts
-sudo chown -R $(whoami) /usr/local/n /usr/local/lib/node_modules /usr/local/bin /usr/local/include /usr/local/share
+curl https://get.volta.sh | bash
+volta install \
+  node@$NODE_VERSION \
+  npm@$NPM_VERSION \
+  pnpm@$PNPM_VERSION \
+  @microsoft/rush@$RUSH_VERSION \
+  prettier@$PRETTIER_VERSION \
+  git-checkout-interactive
+
 npm install -g @microsoft/rush@5.77.1 prettier@2.6.2 pnpm@7.9.5 git-checkout-interactive
 
 # Set timezone

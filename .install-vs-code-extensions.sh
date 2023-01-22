@@ -9,17 +9,17 @@ if which code > /dev/null; then
     code --install-extension esbenp.prettier-vscode
     code --install-extension formulahendry.auto-close-tag
     code --install-extension formulahendry.auto-rename-tag
-    code --install-extension github.copilot
-    code --install-extension jpoissonnier.vscode-styled-components
+    code --install-extension styled-components.vscode-styled-components
     code --install-extension ms-azuretools.vscode-docker
     code --install-extension netcorext.uuid-generator
     code --install-extension rid9.datetime
-    code --install-extension streetsidesoftware.code-spell-checker
     code --install-extension tyriar.sort-lines
     code --install-extension waderyan.gitblame
     code --install-extension prisma.prisma
     code --install-extension graphql.vscode-graphql
     code --install-extension irongeek.vscode-env
+    code --install-extension bradlc.vscode-tailwindcss
+    code --install-extension bungcip.better-toml
 
     touch "$HOME/.vscode-remote/.extensions-installed"
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Done installing VS Code extensions" >> $HOME/.dotfile-install-log
